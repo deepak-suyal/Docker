@@ -9,12 +9,10 @@ RUN apt-get -yqq update
 # Upgrade packages
 RUN apt-get -yqq upgrade
 
-# Set locale and reconfigure
-ENV LANGUAGE en_US.UTF-8
-ENV LANG en_US.UTF-8
+# Set the locale
+RUN apt-get clean && apt-get update
+RUN apt-get install locales
 RUN locale-gen en_US.UTF-8
-RUN dpkg-reconfigure --frontend noninteractive locales
-RUN apt-get -yqq install language-pack-en
 
 # Set timezone
 ENV TZ "US/Eastern"
