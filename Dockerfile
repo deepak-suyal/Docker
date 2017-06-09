@@ -16,7 +16,7 @@ RUN locale-gen en_US.UTF-8
 
 # Set timezone
 ENV TZ "US/Eastern"
-RUN echo "US/Eastern" | sudo tee /etc/timezone
+RUN echo "US/Eastern" | tee /etc/timezone
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 
 # Install utilities
