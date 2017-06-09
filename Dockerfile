@@ -17,6 +17,7 @@ RUN locale-gen en_US.UTF-8
 # Set timezone
 ENV TZ "US/Eastern"
 RUN echo "US/Eastern" | tee /etc/timezone
+RUN apt-get update && apt-get install locales
 RUN dpkg-reconfigure --frontend noninteractive tzdata
 
 # Install utilities
