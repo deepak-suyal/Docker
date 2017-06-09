@@ -40,7 +40,7 @@ RUN apt-get -yqq install supervisor
 RUN mkdir -p /var/log/supervisor
 
 # Install Java
-RUN apt-get -yqq install openjdk-7-jre-headless
+RUN apt-get -yqq install openjdk-8-jre-headless
 
 # Install Selenium
 RUN mkdir -p /opt/selenium
@@ -63,6 +63,12 @@ RUN apt-get -yqq install google-chrome-stable
 
 # Install Firefox
 RUN apt-get -yqq install firefox
+
+# Install geckodriver
+RUN wget https://github.com/mozilla/geckodriver/releases/download/v0.13.0/geckodriver-v0.13.0-linux64.tar.gz
+RUN tar -xvzf geckodriver*
+RUN chmod +x geckodriver
+RUN mv geckodriver /usr/local/bin/
 
 # Configure Supervisor 
 ADD ./etc/supervisor/conf.d /etc/supervisor/conf.d
