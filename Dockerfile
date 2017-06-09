@@ -49,7 +49,7 @@ RUN ln -fs /opt/selenium/selenium-server-standalone-3.4.0.jar /opt/selenium/sele
 RUN wget --no-verbose -O /tmp/chromedriver_linux64.zip http://chromedriver.storage.googleapis.com/2.9/chromedriver_linux64.zip
 RUN mkdir -p /opt/chromedriver-2.9
 RUN unzip /tmp/chromedriver_linux64.zip -d /opt/chromedriver-2.9
-RUN chmod +x /opt/chromedriver-2.9/chromedrive
+RUN chmod +x /opt/chromedriver-2.9/chromedriver
 RUN rm /tmp/chromedriver_linux64.zip
 RUN ln -fs /opt/chromedriver-2.9/chromedriver /usr/local/bin/chromedriver
 
